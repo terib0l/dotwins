@@ -82,6 +82,8 @@ set smartindent
 set incsearch
 set smartcase
 set hlsearch
+noremap <C-w>n :set nohlsearch!<CR>
+noremap <C-w>i [I
 
 " Other setting
 set list
@@ -107,9 +109,6 @@ noremap <C-w>bb :%!xxd -r<CR>
 
 " Number bind
 noremap <C-w>r :set relativenumber!<CR>
-
-" Search bind
-noremap <C-w>n :set nohlsearch!<CR>
 
 tnoremap <Esc> <C-\><C-n>
 
