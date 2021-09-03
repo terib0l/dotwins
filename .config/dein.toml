@@ -1,0 +1,81 @@
+# Organize plugins
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# Theme color
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/tender.vim
+'''
+
+# if,do,def
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+# 
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+# Display code check
+[[plugins]]
+repo = 'w0rp/ale'
+
+#
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/gitgutter.vim
+'''
+
+# Operate git
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/fugitive.vim
+'''
+
+#
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/anzu.vim
+'''
+
+#
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/denite.vim
+'''
+
+# Filer
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['defx-git', 'defx-icons']
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/defx.vim
+'''
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+
+# Statusbar
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/airline.vim
+'''
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# LSP
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merged = 0
+rev = 'master'
+build = 'yarn install --frozen-lockfile'
+hook_add = '''
+  source ~/AppData/Local/nvim/.config/plugins/coc.vim
+'''

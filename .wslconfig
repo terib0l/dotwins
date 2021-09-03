@@ -1,0 +1,8 @@
+[wsl2]
+#kernal= <path>
+memory=6GB
+#processors= <number>
+localhostForwarding=True
+#kernalCommandLine=Blank <string>
+swap=0
+#swapFile=%USERPROFILE%\AppData\Local\Temp\swap.vhdx <path>
