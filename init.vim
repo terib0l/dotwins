@@ -110,7 +110,17 @@ noremap <C-w>bb :%!xxd -r<CR>
 " Number bind
 noremap <C-w>r :set relativenumber!<CR>
 
+" Terminal setting
+noremap <C-w>t :term<CR>
 tnoremap <Esc> <C-\><C-n>
+
+" Leader setting
+let mapleader=" "
+
+" Folding setting
+set foldmethod=indent
+set foldlevel=2
+set foldcolumn=3
 
 " for python3 and defx.vim
 let g:python3_host_prog = '~/scoop/shims/python.exe'
