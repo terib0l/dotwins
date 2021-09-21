@@ -123,7 +123,7 @@ set foldlevel=2
 set foldcolumn=3
 
 " for python3 and defx.vim
-let g:python3_host_prog = '~/scoop/shims/python.exe'
+let g:python3_host_prog = '~\scoop\shims\python3.exe'
 
 "dein Scripts-----------------------------
 if &compatible
@@ -132,11 +132,11 @@ endif
 
 " Path setting
 " Pluginディレクトリのパス
-let s:dein_dir = expand('~/AppData/Local/dotwins/.vim/dein')
+let s:dein_dir = expand('~\AppData\Local\dotwins\.vim\dein')
 " dein.vimのパス
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
 " tomlのディレクトリへのパス
-let s:toml_dir = expand('~/AppData/Local/dotwins/.config')
+let s:toml_dir = expand('~\AppData\Local\dotwins\.config')
 
 " set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 execute 'set runtimepath^=' . s:dein_repo_dir
@@ -144,9 +144,9 @@ execute 'set runtimepath^=' . s:dein_repo_dir
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   " 起動時に読み込むプラグイン群のtoml
-  call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
+  call dein#load_toml(s:toml_dir . '\dein.toml', {'lazy': 0})
   " 利用時に読み込むプラグイン群のtoml
-  call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+  call dein#load_toml(s:toml_dir . '\dein_lazy.toml', {'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif
