@@ -1,7 +1,17 @@
-u=cd ..
-uu=cd ..\..
-uuu=cd ..\..\..
-uuuu=cd ..\..\..\..
+macro=doskey /MACROS
+alias=type %USERPROFILE%\.macro
+valias=nvim %USERPROFILE%\.macro
+salias=doskey /macrofile=%USERPROFILE%\.macro
+unalias=doskey $*=
+
+u=u_gb.bat $*
+uu=uu_gb.bat $*
+uuu=uuu_gb.bat $*
+uuuu=uuuu_gb.bat $*
+
+cd=cd_gb.bat $*
+git=git_gb.bat $*
+
 pwd=cd
 c=cls
 env=set
@@ -14,11 +24,8 @@ ip=ipconfig $*
 jis=chcp 932
 utf-8=chcp 65001
 history=doskey /history
-alias=type %USERPROFILE%\.macro
-valias=nvim %USERPROFILE%\.macro
-salias=doskey /macrofile=%USERPROFILE%\.macro
-cd-wsl=cd \\wsl$\ubuntu\home\terib0l
-cd-nvim=cd C:\Users\Toshiba-Raptop\AppData\Local\nvim
 wsl=wsl.exe $*
 psx=powershell.exe $*
-rmdir=rmdir \s \*
+rmdir=rmdir /s $*
+cat=type $*
+cp=copy $*

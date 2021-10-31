@@ -1,62 +1,44 @@
 # Dotfiles for Windows
-## Description
 
 This is dotfiles for windows.
 
-## Contents
+## Installation
 ```
-.
-├── .config
-│   ├── dein.toml
-│   ├── dein_lazy.toml
-│   └── plugins/
-├── .vim
-│   └── dein/
-├── init.vim
-├── .macro
-├── .wslconfig
-├── setup.bat
-└── README.md
+## Install scoop: https://scoop.sh/
 
-```
+scoop install git python neovim nodejs yarn sudo
+python -m pip install --user neovim pynvim
 
-## Setup
-```
-> Install scoop: https://scoop.sh/
+sudo Add-MpPreference -ExclusionPath 'C:\Users\[username]\scoop'
+sudo Add-MpPreference -ExclusionPath 'C:\ProgramData\scoop'
 
-$ scoop install git python neovim nodejs yarn sudo
+cd %USERPROFILE%\AppData\Local\
+git clone https://github.com/terib0l/dotwins.git
+cd dotwins
+nvim
 
-$ python -m pip install --user neovim pynvim
+copy .\.wslconfig %USERPROFILE%\
+copy .\.macro %USERPROFILE%\
 
-$ sudo Add-MpPreference -ExclusionPath 'C:\Users\[username]\scoop'
+## (for coc)
+cd %USERPROFILE%\AppData\Local\dotwins\.vim\dein\repos\github.com\neoclide\coc.nvim_master\
+git clean -xfd
+yarn install --frozen-lockfile
 
-$ sudo Add-MpPreference -ExclusionPath 'C:\ProgramData\scoop'
+## (alias for commandprompt)
+sudo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v Autorun /t REG_SZ /d "CALL %USERPROFILE%\AppData\Local\dotwins\setup.bat"
+sudo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /t REG_SZ /d "%PATH%;%USERPROFILE%\AppData\Local\dotwins\prompt"
 
-$ cd %USERPROFILE%\AppData\Local\
+## Restart Command Prompt
 
-$ git clone https://github.com/terib0l/dotwins.git
-
-$ cd dotwins
-
-$ nvim
-
-$ copy .\.wslconfig %USERPROFILE%\
-
-$ copy .\.macro %USERPROFILE%\
-
-### for coc
-$ cd %USERPROFILE%\AppData\Local\dotwins\.vim\dein\repos\github.com\neoclide\coc.nvim_master\
-$ git clean -xfd
-$ yarn install --frozen-lockfile
-
-### alias for commandprompt
-> Open Registory-Editor
-  > Move HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor
-    > [New] -> [String Value] -> Name "Autorun"
-      > Modify "Autorun"
-        > Value "CALL /path/to/setup.bat"
-        SAMPLE: "CALL C:\Users\[UserName]\AppData\Local\dotwins\setup.bat"
-
-### other
+## (other)
 $ scoop install grep curl ...
 ```
+
+## What dotwins can do:
+
+* neovim
+* (comfortably)
+    * command prompt (macro, prompt)
+    * wsl
+    * vim
