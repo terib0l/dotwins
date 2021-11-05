@@ -1,6 +1,6 @@
 @echo off
 
-cd ..\..
+echo %*
 
 SET GITBRANCH=
 SET GITCHANGED=
@@ -27,4 +27,3 @@ IF NOT "%GITBRANCH%" == "" (
 :end
 SET GITBRANCH=
 SET GITCHANGED=
-
