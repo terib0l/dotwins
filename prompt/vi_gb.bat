@@ -1,6 +1,6 @@
-@ECHO OFF
+@echo off
 
-git %*
+nvim %*
 
 SET GITBRANCH=
 SET GITCHANGED=

@@ -1,6 +1,6 @@
-@ECHO OFF
+@echo off
 
-git %*
+del %*
 
 SET GITBRANCH=
 SET GITCHANGED=
@@ -27,3 +27,4 @@ IF NOT "%GITBRANCH%" == "" (
 :end
 SET GITBRANCH=
 SET GITCHANGED=
+
